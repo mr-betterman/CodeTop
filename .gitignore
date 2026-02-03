@@ -13,6 +13,7 @@ gradle-app.setting
 .gradletasknamecache
 
 # --- IntelliJ IDEA ---
+.idea/
 CodeTop/.idea/
 *.iws
 *.iml
