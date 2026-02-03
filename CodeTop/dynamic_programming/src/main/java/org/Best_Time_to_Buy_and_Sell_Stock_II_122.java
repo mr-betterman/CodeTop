@@ -20,12 +20,29 @@ public class Best_Time_to_Buy_and_Sell_Stock_II_122 {
         return sold[n-1];
     }
 
+    public int maxProfit2(int[] prices){
+        int n  = prices.length;
+        int[] diff = new int[n];
+        for(int i = 1; i<n; i++){
+            diff[i] = prices[i] - prices[i-1];
+        }
+
+        int result = 0;
+
+        for(int i = 0; i<n; i++){
+            if (diff[i]>0){
+                result+=diff[i];
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Best_Time_to_Buy_and_Sell_Stock_II_122 solver = new Best_Time_to_Buy_and_Sell_Stock_II_122();
 
         int[] prices = {1,2,3,0,2};
 
-        int result = solver.maxProfit(prices);
+        int result = solver.maxProfit2(prices);
 
         System.out.println("Maximum profit: " + result);
     }
